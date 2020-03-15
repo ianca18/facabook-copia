@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>teste</title>
+
+    <style>
+      @media screen and (max-width: 600px) {
+        html,
+        body {
+          display: block;
+          margin: 8px;
+          width: 50%;
+          overflow-y: scroll;
+        }
+      }
+      .heith {
+        padding-left: 45px;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-around;
+        height: 100px;
+        color: aliceblue;
+        background-color: #3b5998;
+        border-bottom: 1px solid #133783;
+      }
+      .logo {
+        margin-top: 0px;
+        color: #0d203b;
+        font-family: "Roboto", sans-serif;
+        width: 210px;
+      }
+      h2 {
+        font-family: inherit;
+        font-size: 36px;
+        color: #333;
+        font-weight: 600;
+        padding: 8px 10px;
+      }
+      h3 {
+        font-family: inherit;
+        color: #1d2129;
+        font-size: 19px;
+        padding: 8px 10px;
+      }
+      .paragrafo,
+      p {
+        font-size: 15px;
+        text-align: left;
+        padding: 5px;
+        text-decoration: none;
+      }
+
+      .login {
+        display: flex;
+        margin-top: 10px;
+        padding: 0 0 0 14px;
+      }
+
+      .formGroup {
+        margin-left: 7px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      button {
+        margin-top: 15px;
+        margin-left: 5px;
+        border-radius: 10px;
+        text-align: center;
+        padding: 5px;
+        color: whitesmoke;
+        background-color: #4267b2;
+        border-color: #29487d;
+        border: 10px;
+      }
+      a:hover .a {
+        color: rgb(3, 14, 46);
+        text-decoration: none;
+      }
+
+      .name {
+        background-color: transparent;
+        font-size: 2vw;
+        padding: 5px;
+        display: flex;
+        border: 25px;
+        margin-left: 5px;
+        border-radius: 10px;
+        width: 300px;
+        line-height: 1.34;
+      }
+      .tel {
+        background-color: transparent;
+        font-size: 2vw;
+        padding: 5px;
+        display: flex;
+        border: 25px;
+        margin-left: 5px;
+      }
+      .senha {
+        background-color: transparent;
+        font-size: 2vw;
+        padding: 5px;
+        display: flex;
+        border: 25px;
+        margin-left: 5px;
+        border-radius: 10px;
+      }
+      form {
+        margin-top: 10px;
+        background-color: transparent;
+        padding: 5px;
+        border: 25px;
+        border-radius: 5px;
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        padding: 8px 10px;
+        border-color: red;
+      }
+      input {
+        border: 1px solid #bdc7d8;
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+      }
+      .container {
+        background: linear-gradient(
+          0deg,
+          rgba(201, 215, 215, 1) 0%,
+          rgba(230, 226, 241, 1) 68%
+        );
+        display: flex;
+        align-content: stretch;
+        height: 100%;
+        padding-left: 100px;
+      }
+
+      .left-side {
+        width: 50%;
+        height: 100%;
+      }
+
+      .left-side p {
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        color: #0e385f;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 29px;
+        margin-top: 40px;
+        width: 450px;
+        word-spacing: -1px;
+        margin-left: 150px;
+      }
+      .left-side img {
+        display: block;
+        margin: auto;
+        width: 60%;
+      }
+
+      .right-side {
+        width: 50%;
+        height: 100%;
+      }
+      .butt {
+        height: 25px;
+        width: 233px;
+        text-align: center;
+        padding: 5px;
+        font-family: "Freight Sans Bold", Helvetica, Arial, sans-serif !important;
+        background-color: #56ad30;
+        box-shadow: inset 0 1px 1px #a4e388;
+        border-color: #3b6e22 #3b6e22 #2c5115;
+        border: 1px solid;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        letter-spacing: 1px;
+        position: relative;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        margin: 0;
+        font-size: 17px;
+      }
+      .mvm {
+        margin-top: 10px;
+      }
+      span {
+        color: rgb(143, 143, 143);
+        font-weight: bold;
+        font-family: sans-serif;
+        padding-top: 10px;
+      }
+
+      .Gênero {
+        font-family: Helvetica, Arial, sans-serif;
+        color: #1d2129;
+        font-size: 17px;
+        margin-top: 10px;
+        background-color: transparent;
+        padding: 5px;
+        border: 25px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      /*aqui esta meus id*/
+      #imp-name {
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 8px 10px;
+        border-radius: 5px;
+        width: 170px;
+      }
+
+      #imp-sobrenome {
+        border-radius: 5px;
+        margin-left: 5px;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 8px 10px;
+        width: 170px;
+      }
+      #imp-email {
+        margin-left: 10px;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 8px 10px;
+        border-radius: 5px;
+
+        border-color: rgb(199, 194, 194);
+        border-radius: 5px;
+        margin: 0;
+        width: 365px;
+      }
+      #imp-senha {
+        border-radius: 5px;
+
+        margin-left: 10px;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 8px 10px;
+        border-color: rgb(199, 194, 194);
+        border-radius: 5px;
+        margin: 0;
+        width: 365px;
+      }
+
+      .uiList > ul,
+      li {
+        display: inline-block;
+        text-decoration: none;
+        padding-left: 9px;
+        font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+        margin: 0 auto;
+        text-align: center;
+        display: inline-block;
+        font-size: 15px;
+        flex-direction: column;
+        color: #133783;
+      }
+
+      .minha {
+        padding-top: 4px;
+        font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+        margin: 4px;
+
+        font-size: 12px;
+        color: #c2c3c7;
+        line-height: 1.34;
+      }
+      a:hover.minha {
+        color: whitesmoke;
+     
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <img class="logo" src="./facebook-logo-1.png" />
+      <div class="login">
+        <div class="formGroup">
+          <label>Email ou telefone:</label>
+          <input type="text" value="" id="Email" name="Email" />
+        </div>
+        <div class="formGroup">
+          <label>Senha:</label>
+          <input type="text" value="" id="username" name="username" />
+          <a class="minha" href="#">Esqueci minha senha?</a>
+        </div>
+        <div>
+          <button>Entrar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="left-side">
+        <p>
+          <b
+            >O Facebook ajuda você a se conectar e compartilhar com as pessoas
+            que fazem parte da sua vida.</b
+          >
+        </p>
+        <img src="./fc.png" alt="mundo" />
+      </div>
+
+      <div>
+        <div class="heith">
+          <h2><strong>Abra sua conta </strong></h2>
+          <h3>É rápido e fácil.</h3>
+          <div class="right-side">
+            <div class="name">
+              <input id="imp-name" type="text" name="Name" placeholder="Nome" />
+              <input
+                id="imp-sobrenome"
+                type="text"
+                name="Sobrenome"
+                placeholder="Sobrenome"
+              />
+            </div>
+
+            <div class="tel">
+              <input
+                id="imp-email"
+                type="text"
+                name="Celular ou email"
+                placeholder="Celular ou email"
+              />
+            </div>
+            <div class="senha">
+              <input
+                id="imp-senha"
+                type="text"
+                name="Nova Senha"
+                placeholder="Nova Senha"
+              />
+            </div>
+            <form>
+              <span>Data De Nascimento</span>
+
+              <div class="Data">
+                <input id="Date" type="date" value="2020-03-11" />
+              </div>
+              <span>Gênero</span>
+            </form>
+
+            <div class="Gênero">
+              <label class="sexo">Feminino</label>
+              <input type="radio" name="sex" placeholder="feminino" />
+
+              <label class="sexo">Masculino</label>
+              <input type="radio" name="sex" placeholder="masculino" />
+
+              <label class="sexo">Personalizado</label>
+              <input type="radio" name="sex" placeholder="personalizado" />
+            </div>
+            <div class="paragrafo">
+              <p>
+                Ao clicar em Cadastre-se, você concorda com nossos<a href="#"
+                  >Termos</a
+                >, <a href="#">Política de Dados</a> e<a href="#">
+                  Política de Cookies.</a
+                >
+                Você pode receber notificações por SMS e pode cancelar isso
+                quando quiser.
+              </p>
+
+              <div class="butt">
+                <strong>Cadastre-se</strong>
+              </div>
+            </div>
+            <a href="#"> Criar uma pagina </a>para uma celebridade,barda ou
+            empresa
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="uiList localeSelectorList">
+      <li>Português (Brasil)</li>
+      <li>
+        <a
+          class="_sv4"
+          dir="ltr"
+          href="#"
+          onclick='require("IntlUtils").setCookieLocale("en_US", "pt_BR", "https:\/\/www.facebook.com\/", "www_list_selector", 0); return false;'
+          title="English (US)"
+          >English (US)</a
+        >
+      </li>
+      <li>
+        <a
+          class="_sv4"
+          dir="ltr"
+          href="#"
+          onclick='require("IntlUtils").setCookieLocale("es_LA", "pt_BR", "https:\/\/es-la.facebook.com\/", "www_list_selector", 1); return false;'
+          title="Spanish"
+          >Español</a
+        >
+      </li>
+      <li>
+        <a
+          class="_sv4"
+          dir="ltr"
+          href="#"
+          onclick='require("IntlUtils").setCookieLocale("fr_FR", "pt_BR", "https:\/\/fr-fr.facebook.com\/", "www_list_selector", 2); return false;'
+          title="French (France)"
+          >Français (France)</a
+        >
+      </li>
+      <li>
+        <a
+          class="_sv4"
+          dir="ltr"
+          href="#"
+          onclick='require("IntlUtils").setCookieLocale("it_IT", "pt_BR", "https:\/\/it-it.facebook.com\/", "www_list_selector", 3); return false;'
+          title="Italian"
+          >Italiano</a
+        >
+      </li>
+      <li>
+        <a
+          class="_sv4"
+          dir="ltr"
+          href="#"
+          onclick='require("IntlUtils").setCookieLocale("de_DE", "pt_BR", "https:\/\/de-de.facebook.com\/", "www_list_selector", 4); return false;'
+          title="German"
+          >Deutsch</a
+        >
+      </li>
+      <li>
+        <a
+          class="_sv4"
+          dir="rtl"
+          href="#"
+          onclick='require("IntlUtils").setCookieLocale("ar_AR", "pt_BR", "https:\/\/ar-ar.facebook.com\/", "www_list_selector", 5); return false;'
+          title="Arabic"
+          >العربية</a
+        >
+      </li>
+      <li>
+        <a
+          class="_sv4"
+          dir="ltr"
+          href="#"
+          onclick='require("IntlUtils").setCookieLocale("hi_IN", "pt_BR", "https:\/\/hi-in.facebook.com\/", "www_list_selector", 6); return false;'
+          title="Hindi"
+          >हिन्दी</a
+        >
+      </li>
+      <li>
+        <a
+          class="_sv4"
+          dir="ltr"
+          href="#"
+          onclick='require("IntlUtils").setCookieLocale("zh_CN", "pt_BR", "https:\/\/zh-cn.facebook.com\/", "www_list_selector", 7); return false;'
+          title="Simplified Chinese (China)"
+          >中文(简体)</a
+        >
+      </li>
+      <li>
+        <a
+          class="_sv4"
+          dir="ltr"
+          href="#"
+          onclick='require("IntlUtils").setCookieLocale("ja_JP", "pt_BR", "https:\/\/ja-jp.facebook.com\/", "www_list_selector", 8); return false;'
+          title="Japanese"
+          >日本語</a
+        >
+      </li>
+      <li>
+        <a
+          role="button"
+          class="_42ft _4jy0 _517i _517h _51sy"
+          rel="dialog"
+          ajaxify="/settings/language/language/?uri=https%3A%2F%2Fja-jp.facebook.com%2F&amp;source=www_list_selector_more"
+          href="#"
+          title="Mostrar mais idiomas"
+          ><i class="img sp_1cLUFecMJSs sx_e52bb9"></i
+        ></a>
+      </li>
+    </ul>
+
+    <ul class="uiList pageFooterLinkList">
+      <li>
+        <a href="#" title="Cadastre-se no Facebook">Cadastre-se</a>
+      </li>
+      <li><a href="#" title="Entrar no Facebook">Entrar</a></li>
+      <li>
+        <a href="#" title="Confira o Messenger.">Messenger</a>
+      </li>
+      <li>
+        <a href="#" title="Facebook Lite para Android.">Facebook Lite</a>
+      </li>
+      <li>
+        <a href="#" title="Navegue pelos nossos vídeos do Watch.">
+          Watch
+        </a>
+      </li>
+      <li>
+        <a href="#" title="Navegue no nosso diretório de pessoas.">Pessoas</a>
+      </li>
+      <li>
+        <a href="#" title="Pesquisar nosso diretório de páginas.">Páginas</a>
+      </li>
+      <li><a href="#">Categorias de Página</a></li>
+      <li>
+        <a href="#" title="Confira locais populares no Facebook.">Locais</a>
+      </li>
+      <li>
+        <a href="#" title="Confira os jogos do Facebook.">Jogos</a>
+      </li>
+      <li>
+        <a href="#" title="Navegue pelo nosso diretório de locais.">Locais</a>
+      </li>
+      <li>
+        <a href="#" title="Compre e venda no Facebook Marketplace."
+          >Marketplace</a
+        >
+      </li>
+      <li>
+        <a href="#" title="Navegue pelo nosso diretório de grupos.">Grupos</a>
+      </li>
+      <li>
+        <a
+          href="#"
+          title="Confira o Instagram"
+          target="_blank"
+          rel="noopener nofollow"
+          data-lynx-mode="asynclazy"
+          >Instagram</a
+        >
+      </li>
+      <li>
+        <a href="#" title="Navegar pelo nosso diretório de listas locais."
+          >Local</a
+        >
+      </li>
+      <li>
+        <a href="#" title="Doe para causas importantes."
+          >Campanhas de arrecadação de fundos</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          title="Navegue pelo nosso diretório de serviços do Facebook."
+          >Serviços</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          accesskey="8"
+          title="Leia nosso blog, descubra a central de recursos e encontre oportunidades de trabalho."
+          >Sobre</a
+        >
+      </li>
+      <li>
+        <a href="#" title="Anuncie no Facebook.">Criar anúncio</a>
+      </li>
+      <li>
+        <a href="#">Criar Página</a>
+      </li>
+      <li>
+        <a href="#" title="Desenvolver em nossa plataforma.">Desenvolvedores</a>
+      </li>
+      <li>
+        <a
+          href="#"
+          title="Dê um passo adiante na sua carreira em nossa incrível empresa."
+          >Carreiras</a
+        >
+      </li>
+      <li>
+        <a
+          data-nocookies="1"
+          href="#"
+          title="Saiba mais sobre sua privacidade e o Facebook."
+          >Privacidade</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          title="Saiba mais sobre cookies e o Facebook"
+          data-nocookies="1"
+          >Cookies</a
+        >
+      </li>
+      <li>
+        <a
+          class="_41ug"
+          data-nocookies="1"
+          href="#"
+          title="Saiba mais sobre as Opções de anúncio."
+          >Opções de anúncio<i class="img sp_xn1Aa40IeRy sx_2c4f42"></i
+        ></a>
+      </li>
+      <li>
+        <a
+          data-nocookies="1"
+          href="#"
+          accesskey="9"
+          title="Leia os nossos termos e políticas."
+          >Termos</a
+        >
+      </li>
+      <li>
+        <a href="#" accesskey="0" title="Acesse nossa Central de Ajuda."
+          >Ajuda</a
+        >
+      </li>
+      <li>
+        <a
+          accesskey="6"
+          class="accessible_elem"
+          href="#"
+          title="Visualize e edite suas configurações do Facebook."
+          >Configurações</a
+        >
+      </li>
+      <li>
+        <a
+          accesskey="7"
+          class="accessible_elem"
+          href="#"
+          title="Ver seu Registro de Atividades"
+          >Registro de Atividades</a
+        >
+      </li>
+    </ul>
+
+
+    <script>
+      var dateControl = document.querySelector('input[type="date"]');
+      dateControl.value = "2017 04 01";
+    </script>
+  </body>
+</html>
